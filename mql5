@@ -1,0 +1,172 @@
+
+// Developer: Forex Robot Easy Team
+// Website: forexroboteasy.com
+// Program Name: Nesco MT4
+
+// Include necessary libraries
+#include <GPT-4_COPILOT>
+#include <MQL5_CLOUD_NETWORK>
+
+// Define constants
+#define NOTIFICATION_PHONE '+1234567890'
+#define STRATEGY_PILOT_R 1
+#define STRATEGY_STENVALLL_ 2
+#define STRATEGY_NIGHT_POUND 3
+#define SYMBOL_EURUSD 'EURUSD'
+#define SYMBOL_GBPUSD 'GBPUSD'
+#define SYMBOL_USDJPY 'USDJPY'
+#define MIN_DEPOSIT_PILOT_R 1000
+#define MIN_DEPOSIT_STENVALLL_ 2000
+#define MIN_DEPOSIT_NIGHT_POUND 500
+#define TRADING_TIME_PILOT_R '08:00-16:00'
+#define TRADING_TIME_STENVALLL_ '12:00-20:00'
+#define TRADING_TIME_NIGHT_POUND '22:00-06:00'
+
+// Define global variables
+int currentStrategy;
+bool attentionRequired;
+
+// Function to fetch financial events
+void fetchFinancialEvents()
+{
+    // Fetch financial events globally
+    // Update relevant market data
+}
+
+// Function to send notifications to users' phones
+void sendNotification(string message)
+{
+    // Send notification to user's phone
+    // using NOTIFICATION_PHONE
+}
+
+// Function to execute buy order
+void executeBuyOrder(string symbol, double volume)
+{
+    // Execute buy order for given symbol and volume
+}
+
+// Function to execute sell order
+void executeSellOrder(string symbol, double volume)
+{
+    // Execute sell order for given symbol and volume
+}
+
+// Function to execute stop-loss order
+void executeStopLossOrder(string symbol, double price)
+{
+    // Execute stop-loss order for given symbol and price
+}
+
+// Function to execute take-profit order
+void executeTakeProfitOrder(string symbol, double price)
+{
+    // Execute take-profit order for given symbol and price
+}
+
+// Function to execute trailing stop
+void executeTrailingStop(string symbol, double trailingDistance)
+{
+    // Execute trailing stop for given symbol and trailing distance
+}
+
+// Function to analyze market and make trading decisions
+void analyzeMarket()
+{
+    // Perform market analysis using advanced technologies
+    // Update currentStrategy based on analysis
+    
+    // Check if attention is required
+    attentionRequired = true;
+}
+
+// Function to execute trading based on current strategy
+void executeTrading()
+{
+    switch (currentStrategy)
+    {
+        case STRATEGY_PILOT_R:
+            // Execute trading for PILOT_R strategy
+            executeBuyOrder(SYMBOL_EURUSD, 0.1);
+            executeSellOrder(SYMBOL_GBPUSD, 0.2);
+            executeStopLossOrder(SYMBOL_EURUSD, 1.0);
+            executeTakeProfitOrder(SYMBOL_GBPUSD, 2.0);
+            executeTrailingStop(SYMBOL_EURUSD, 0.5);
+            break;
+        
+        case STRATEGY_STENVALLL_:
+            // Execute trading for STENVALLL_ strategy
+            executeBuyOrder(SYMBOL_GBPUSD, 0.3);
+            executeSellOrder(SYMBOL_USDJPY, 0.4);
+            executeStopLossOrder(SYMBOL_GBPUSD, 1.5);
+            executeTakeProfitOrder(SYMBOL_USDJPY, 2.5);
+            executeTrailingStop(SYMBOL_GBPUSD, 1.0);
+            break;
+        
+        case STRATEGY_NIGHT_POUND:
+            // Execute trading for NIGHT_POUND strategy
+            executeBuyOrder(SYMBOL_EURUSD, 0.5);
+            executeSellOrder(SYMBOL_USDJPY, 0.6);
+            executeStopLossOrder(SYMBOL_EURUSD, 2.0);
+            executeTakeProfitOrder(SYMBOL_USDJPY, 3.0);
+            executeTrailingStop(SYMBOL_EURUSD, 1.5);
+            break;
+        
+        default:
+            // No valid strategy found
+            attentionRequired = true;
+            break;
+    }
+}
+
+// Main function
+int OnInit()
+{
+    // Initialize Nesco MT4 Forex Trading Software
+    currentStrategy = STRATEGY_PILOT_R;
+    attentionRequired = false;
+    
+    // Connect to MQL5_CLOUD_NETWORK
+    connectToCloudNetwork();
+    
+    // Fetch financial events
+    fetchFinancialEvents();
+    
+    return(INIT_SUCCEEDED);
+}
+
+// Function to handle trading events
+void OnTick()
+{
+    // Analyze market and make trading decisions
+    analyzeMarket();
+    
+    // Execute trading based on current strategy
+    executeTrading();
+    
+    // Send notification if attention is required
+    if (attentionRequired)
+    {
+        sendNotification('Attention required!');
+    }
+}
+
+// Function to stop the program
+void OnDeinit(const int reason)
+{
+    // Disconnect from MQL5_CLOUD_NETWORK
+    disconnectFromCloudNetwork();
+}
+
+// Function to handle program errors
+void OnError(const int error_code, const string error_message)
+{
+    // Handle program errors
+}
+
+// Function to handle program shutdown
+void OnShutdown()
+{
+    // Shutdown Nesco MT4 Forex Trading Software
+}
+
